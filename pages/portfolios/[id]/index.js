@@ -25,7 +25,7 @@ const Portfolio = ({ portfolio }) => {
 
 // Client-Static side rendering
 export const getStaticPaths = async () => {
-  const res = await new PortfolioApi().getPortfolios();
+  const res = await new PortfolioApi().getAll();
   const portfolios = await res.data;
 
   const paths = portfolios.map((portfolio) => {
@@ -40,7 +40,7 @@ export const getStaticPaths = async () => {
 
 // Client-Static side rendering
 export const getStaticProps = async ({ params }) => {
-  const res = await new PortfolioApi().getPortfolioById(params.id);
+  const res = await new PortfolioApi().getById(params.id);
   const portfolio = await res.data.data;
 
   return {

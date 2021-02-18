@@ -21,11 +21,12 @@ export const useApiHandler = (apiCall) => {
     setReqState({ data: null, error: null, loading: true });
     try {
       const res = await apiCall(...data);
-      setReqState({ data: res.data.data, error: null, loading: false });
-      return res.data.data;
+      setReqState({ data: res.data, error: null, loading: false });
+      return res.data;
     } catch (e) {
       const errorMessage =
         (e.response && e.response.data) || 'Oops something went wrong!';
+      console.log('errorMessage', errorMessage);
       setReqState({ data: null, error: errorMessage, loading: false });
       return Promise.reject(errorMessage);
     }

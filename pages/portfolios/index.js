@@ -73,7 +73,7 @@ const Portfolios = ({ portfolios: initialPortfolios }) => {
 };
 
 export const getStaticProps = async () => {
-  const res = await new PortfolioApi().getPortfolios();
+  const res = await new PortfolioApi().getAll();
   const portfolios = await res.data;
 
   return {

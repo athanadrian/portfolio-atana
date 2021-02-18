@@ -1,10 +1,10 @@
-import PortfolioApi from '@/lib/api/portfolios';
+import BlogApi from '@/lib/api/blogs';
 import auth0 from '@/utils/auth0';
 
-export default async function createPortfolio(req, res) {
+export default async function createBlog(req, res) {
   try {
     const { accessToken } = await auth0.getSession(req);
-    const result = await new PortfolioApi(accessToken).create(req.body);
+    const result = await new BlogApi(accessToken).create(req.body);
     return res.json(result.data);
   } catch (e) {
     console.log('we are getting error');

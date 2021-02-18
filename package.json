@@ -13,7 +13,7 @@
     "bootstrap": "^4.4.1",
     "cross-env": "^7.0.2",
     "express": "^4.17.1",
-    "moment": "^2.25.3",
+    "moment": "^2.29.1",
     "next": "^9.4.0",
     "next-routes": "^1.4.2",
     "react": "16.13.1",
@@ -25,6 +25,7 @@
     "react-typed": "^1.2.0",
     "reactstrap": "^8.4.1",
     "sass": "^1.26.5",
+    "slate-simple-editor": "git+https://github.com/Jerga99/slate-simple-editor.git",
     "swr": "^0.2.0"
   },
   "devDependencies": {

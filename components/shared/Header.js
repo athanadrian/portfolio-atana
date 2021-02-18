@@ -70,7 +70,7 @@ const AdminMenu = () => {
         <DropdownItem>
           <BsNavLink
             className='port-dropdown-item'
-            href='/blogs/dashboard'
+            href='/dashboard'
             title='Dashboard'
           />
         </DropdownItem>
@@ -94,9 +94,9 @@ const Header = ({ user, loading, className }) => {
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className='mr-auto' navbar>
-            <NavItem className='port-navbar-item'>
+            {/* <NavItem className='port-navbar-item'>
               <BsNavLink href='/' title='Home' />
-            </NavItem>
+            </NavItem> */}
             <NavItem className='port-navbar-item'>
               <BsNavLink href='/about' title='About' />
             </NavItem>
