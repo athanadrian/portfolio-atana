@@ -10,7 +10,9 @@ const Portfolio = ({ portfolio }) => {
   console.log('data portfolio', data);
   return (
     <BaseLayout className='cover' user={data} loading={loadingUser}>
-      <BasePage header='Portfolio Detail'>{JSON.stringify(portfolio)}</BasePage>
+      <BasePage header='Portfolio Detail' title={`${portfolio.title} - Atana`}>
+        {JSON.stringify(portfolio)}
+      </BasePage>
     </BaseLayout>
   );
 };
@@ -24,28 +26,21 @@ const Portfolio = ({ portfolio }) => {
 // };
 
 // Client-Static side rendering
-export const getStaticPaths = async () => {
-  const res = await new PortfolioApi().getAll();
-  const portfolios = await res.data;
-
+export async function getStaticPaths() {
+  const json = await new PortfolioApi().getAll();
+  const portfolios = json.data;
   const paths = portfolios.map((portfolio) => {
     return {
       params: { id: portfolio._id },
     };
   });
-
-  // fallback:false -> 404 pages will resolved when 'not found pages occurs'
   return { paths, fallback: false };
-};
+}
 
 // Client-Static side rendering
-export const getStaticProps = async ({ params }) => {
-  const res = await new PortfolioApi().getById(params.id);
-  const portfolio = await res.data.data;
-
-  return {
-    props: { portfolio },
-  };
-};
-
+export async function getStaticProps({ params }) {
+  const json = await new PortfolioApi().getById(params.id);
+  const portfolio = json.data;
+  return { props: { portfolio } };
+}
 export default withRouter(Portfolio);

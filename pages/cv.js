@@ -6,7 +6,12 @@ import { useGetUser } from '@/actions/user';
 const Cv = () => {
   const { data, loading } = useGetUser();
   return (
-    <BaseLayout className='cover' user={data} loading={loading}>
+    <BaseLayout
+      className='cover'
+      user={data}
+      loading={loading}
+      title='My Experience - Atana'
+    >
       <BasePage>
         <p>cv page</p>
       </BasePage>

@@ -29,7 +29,11 @@ const Portfolios = ({ portfolios: initialPortfolios }) => {
 
   return (
     <BaseLayout user={userData} loading={loadingUser}>
-      <BasePage header='Portfolios' className='portfolio-page'>
+      <BasePage
+        header='Portfolios'
+        className='portfolio-page'
+        title='Newest Portfolios - Atana'
+      >
         <Row>
           {portfolios.map((portfolio) => (
             <Col

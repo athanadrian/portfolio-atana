@@ -12,7 +12,7 @@ const BlogItem = ({ blog }) => (
       </Link>
       <p className='post-meta'>
         Posted by
-        <a href='#'> Atana </a>- {formatDate(blog.createdAt, 'LLLL')}
+        <a href='#'> {blog.author.name}</a>-{formatDate(blog.createdAt, 'LLLL')}
       </p>
     </div>
   </div>
