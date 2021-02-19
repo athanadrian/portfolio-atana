@@ -9,7 +9,6 @@ import withAuth from '@/hoc/withAuth';
 import { useCreatePortfolio } from '@/actions/portfolios';
 
 const PortfolioNew = ({ user, loading: userLoading }) => {
-  console.log('user new', user);
   const [createPortfolio, { data, error, loading }] = useCreatePortfolio();
 
   if (data) {

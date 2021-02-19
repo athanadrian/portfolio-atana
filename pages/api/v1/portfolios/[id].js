@@ -15,7 +15,6 @@ export default async function handlePortfolio(req, res) {
       );
       return res.json(result.data);
     } catch (e) {
-      console.log('we are getting error');
       return res.status(e.status || 422).json(e.response.data);
     }
   }
@@ -26,7 +25,6 @@ export default async function handlePortfolio(req, res) {
       const result = await new PortfolioApi(accessToken).delete(req.query.id);
       return res.json(result.data);
     } catch (e) {
-      console.log('we are getting error');
       return res.status(e.status || 422).json(e.response.data);
     }
   }

@@ -7,7 +7,6 @@ export default async function getUserBlogs(req, res) {
     const result = await new BlogApi(accessToken).getByUser();
     return res.json(result.data);
   } catch (e) {
-    console.log('we are getting error');
     return res.status(e.status || 422).json(e.response.data);
   }
 }

@@ -7,7 +7,6 @@ export default async function createBlog(req, res) {
     const result = await new BlogApi(accessToken).create(req.body);
     return res.json(result.data);
   } catch (e) {
-    console.log('we are getting error');
     return res.status(e.status || 422).json(e.response.data);
   }
 }
