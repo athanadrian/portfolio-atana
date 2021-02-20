@@ -21,6 +21,10 @@ const Portfolio = ({
   const { data, loading: loadingUser } = useGetUser();
   const router = useRouter();
 
+  if (router.isFallback) {
+    return <h1>Your page is getting server</h1>;
+  }
+
   return (
     <BaseLayout navClass='transparent' user={data} loading={loadingUser}>
       <BasePage
