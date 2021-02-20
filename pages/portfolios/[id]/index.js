@@ -1,4 +1,4 @@
-import { withRouter } from 'next/router';
+import { useRouter } from 'next/router';
 
 import BaseLayout from '@/components/layouts/BaseLayout';
 import BasePage from '@/components/BasePage';
@@ -19,6 +19,7 @@ const Portfolio = ({
   },
 }) => {
   const { data, loading: loadingUser } = useGetUser();
+  const router = useRouter();
 
   return (
     <BaseLayout navClass='transparent' user={data} loading={loadingUser}>
@@ -31,19 +32,26 @@ const Portfolio = ({
         <div className='portfolio-detail'>
           <div className='cover-container d-flex h-100 p-3 mx-auto flex-column'>
             <main role='main' className='inner page-cover'>
-              <h1 className='cover-heading'>{title}</h1>
-              <p className='lead dates'>
-                {formatDate(startDate, 'LL')}-{formatDate(endDate, 'LL')}
-              </p>
-              <p className='lead info mb-0'>
-                {jobTitle} | {company} | {location}
-              </p>
-              <p className='lead'>{description}</p>
-              <p className='lead'>
-                <a href='#' className='btn btn-lg btn-secondary'>
-                  {companyWebsite}
-                </a>
-              </p>
+              {router.isFallback && (
+                <h1 className='cover-heading'>Page is loading...</h1>
+              )}
+              {!router.isFallback && (
+                <>
+                  <h1 className='cover-heading'>{title}</h1>
+                  <p className='lead dates'>
+                    {formatDate(startDate, 'LL')}-{formatDate(endDate, 'LL')}
+                  </p>
+                  <p className='lead info mb-0'>
+                    {jobTitle} | {company} | {location}
+                  </p>
+                  <p className='lead'>{description}</p>
+                  <p className='lead'>
+                    <a href='#' className='btn btn-lg btn-secondary'>
+                      {companyWebsite}
+                    </a>
+                  </p>
+                </>
+              )}
             </main>
           </div>
         </div>
@@ -69,7 +77,7 @@ export async function getStaticPaths() {
       params: { id: portfolio._id },
     };
   });
-  return { paths, fallback: false };
+  return { paths, fallback: true };
 }
 
 // Client-Static side rendering
@@ -78,4 +86,4 @@ export async function getStaticProps({ params }) {
   const portfolio = json.data;
   return { props: { portfolio }, revalidate: 1 };
 }
-export default withRouter(Portfolio);
+export default Portfolio;
