@@ -1,61 +1,48 @@
-import { useRouter } from 'next/router';
-
 import BaseLayout from '@/components/layouts/BaseLayout';
 import BasePage from '@/components/BasePage';
 import { useGetUser } from '@/actions/user';
-import PortfolioApi from '@/lib/api/portfolios';
 import { formatDate } from 'utils/functions';
+import PortfolioApi from '@/lib/api/portfolios';
+import { useRouter } from 'next/router';
 
-const Portfolio = ({
-  portfolio: {
-    title,
-    description,
-    jobTitle,
-    company,
-    companyWebsite,
-    startDate,
-    endDate,
-    location,
-  },
-}) => {
-  const { data, loading: loadingUser } = useGetUser();
+const Portfolio = ({ portfolio }) => {
   const router = useRouter();
+  const { data: dataU, loading: loadingU } = useGetUser();
 
   if (router.isFallback) {
-    return <h1>Your page is getting server</h1>;
+    return 'Loading...';
   }
 
   return (
-    <BaseLayout navClass='transparent' user={data} loading={loadingUser}>
+    <BaseLayout navClass='transparent' user={dataU} loading={loadingU}>
       <BasePage
         noWrapper
         indexPage
-        title={`${title} - Atana`}
-        metaDescription={description}
+        title={`${portfolio.title} - Atana`}
+        metaDescription={portfolio.description}
       >
         <div className='portfolio-detail'>
-          <div className='cover-container d-flex h-100 p-3 mx-auto flex-column'>
-            <main role='main' className='inner page-cover'>
-              {router.isFallback && (
-                <h1 className='cover-heading'>Page is loading...</h1>
-              )}
-              {!router.isFallback && (
-                <>
-                  <h1 className='cover-heading'>{title}</h1>
-                  <p className='lead dates'>
-                    {formatDate(startDate, 'LL')}-{formatDate(endDate, 'LL')}
-                  </p>
-                  <p className='lead info mb-0'>
-                    {jobTitle} | {company} | {location}
-                  </p>
-                  <p className='lead'>{description}</p>
-                  <p className='lead'>
-                    <a href='#' className='btn btn-lg btn-secondary'>
-                      {companyWebsite}
-                    </a>
-                  </p>
-                </>
-              )}
+          <div class='cover-container d-flex h-100 p-3 mx-auto flex-column'>
+            <main role='main' class='inner page-cover'>
+              <h1 class='cover-heading'>{portfolio.title}</h1>
+              <p class='lead dates'>
+                {formatDate(portfolio.startDate)} -{' '}
+                {formatDate(portfolio.endDate) || 'Present'}
+              </p>
+              <p class='lead info mb-0'>
+                {portfolio.jobTitle} | {portfolio.company} |{' '}
+                {portfolio.location}
+              </p>
+              <p class='lead'>{portfolio.description}</p>
+              <p class='lead'>
+                <a
+                  href={portfolio.companyWebsite}
+                  target='_'
+                  class='btn btn-lg btn-secondary'
+                >
+                  Visit Company
+                </a>
+              </p>
             </main>
           </div>
         </div>
@@ -64,16 +51,8 @@ const Portfolio = ({
   );
 };
 
-// // Server side rendering
-// export const getServerSideProps = async ({ query }) => {
-//   const res = await getPortfolioById(query.id);
-//   const portfolio = await res.data.data;
-
-//   return { props: { portfolio } };
-// };
-
-// Client-Static side rendering
 export async function getStaticPaths() {
+  console.log('reexecuting getStaticPaths');
   const json = await new PortfolioApi().getAll();
   const portfolios = json.data;
   const paths = portfolios.map((portfolio) => {
@@ -81,13 +60,15 @@ export async function getStaticPaths() {
       params: { id: portfolio._id },
     };
   });
+
   return { paths, fallback: true };
 }
 
-// Client-Static side rendering
 export async function getStaticProps({ params }) {
+  console.log('reexecuting getStaticProps');
   const json = await new PortfolioApi().getById(params.id);
   const portfolio = json.data;
-  return { props: { portfolio }, revalidate: 1 };
+  return { props: { portfolio }, revalidate: 60 };
 }
+
 export default Portfolio;
