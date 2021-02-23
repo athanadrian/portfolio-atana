@@ -22,9 +22,6 @@ const Hardware = () => {
         <CardText>
           <Title label='Smartphone:' /> Iphone XS Max
         </CardText>
-        <CardText>
-          <Title label='Smartphone:' /> Iphone XS Max
-        </CardText>
       </Card>
     </div>
   );
