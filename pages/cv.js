@@ -12,6 +12,8 @@ import CragCardFollowers from 'components/crag/CragCardFollowers';
 import StravaCardElapsedTime from 'components/strava/StravaCardElapsedTime';
 import StravaCardMiles from 'components/strava/StravaCardMiles';
 import StravaCardRuns from 'components/strava/StravaCardRuns.js';
+import Software from 'components/gear/Software';
+import Hardware from 'components/gear/Hardware';
 
 const Cv = () => {
   const { data, loading } = useGetUser();
@@ -24,7 +26,7 @@ const Cv = () => {
     >
       <BasePage>
         <h1 className='pb-2'>Social</h1>
-        <Row className='my-2'>
+        <Row className='mb-3'>
           <Col md>
             <GithubCardProjects />
           </Col>
@@ -35,7 +37,7 @@ const Cv = () => {
             <GitHubCardForks />
           </Col>
         </Row>
-        <Row className='my-2'>
+        <Row className='mb-3'>
           <Col md>
             <StravaCardElapsedTime />
           </Col>
@@ -46,7 +48,7 @@ const Cv = () => {
             <StravaCardRuns />
           </Col>
         </Row>
-        <Row className='my-2'>
+        <Row className='mb-3'>
           <Col md>
             <CragCardAccents />
           </Col>
@@ -55,6 +57,17 @@ const Cv = () => {
           </Col>
           <Col md>
             <CragCardFollowers />
+          </Col>
+        </Row>
+        <h1 className='pb-2'>Gear</h1>
+        <Row className='mb-3'>
+          <Col md='10'>
+            <Software />
+          </Col>
+        </Row>
+        <Row>
+          <Col md='10'>
+            <Hardware />
           </Col>
         </Row>
       </BasePage>
