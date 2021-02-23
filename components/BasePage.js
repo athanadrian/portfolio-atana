@@ -27,7 +27,7 @@ const BasePage = ({
   const pageClass = indexPage ? 'index-page' : 'base-page';
   return (
     <>
-      <Head>
+      {/* <Head>
         <meta name='viewport' content='initial-scale=1.0, width=device-width' />
         <title>{title}</title>
         <meta name='description' key='description' content={metaDescription} />
@@ -61,7 +61,7 @@ const BasePage = ({
           href='https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap'
           rel='stylesheet'
         ></link>
-      </Head>
+      </Head> */}
       <div className={`${pageClass} ${className}`}>
         {noWrapper && (
           <>
