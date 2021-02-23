@@ -84,8 +84,8 @@ const Index = () => {
                 <div className='hero-welcome-text'>
                   <h1>
                     Welcome to the portfolio website of Atana. Get informed,
-                    collaborate and discover projects I was working on through
-                    the years!
+                    collaborate and discover projects I worked on through the
+                    years!
                   </h1>
                 </div>
                 <Typed
@@ -100,7 +100,7 @@ const Index = () => {
                   cursorChar='|'
                 />
                 <div className='hero-welcome-bio'>
-                  <h1>Let's take a look on my work.</h1>
+                  <h1>Let's take a look at my work.</h1>
                 </div>
               </Col>
             </Row>

@@ -31,7 +31,7 @@ const About = () => {
               <h1 className={`title ${createFadeInClass()}`}>Hello, Welcome</h1>
               <h4 className={`subtitle fadein`}>To About Page</h4>
               <p className={`subsubTitle fadein`}>
-                Feel free to read short description about me.
+                Feel free to read a short description about me.
               </p>
             </div>
           </Col>
@@ -49,9 +49,9 @@ const About = () => {
               </p>
               <p>
                 Throughout my career, I have acquired advanced technical
-                knowledge and the ability to use several platforms, libraries,
-                frameworks. I invite you to check my portfolios, where I have
-                put a lot of effort to implement several projects.
+                knowledge and the ability to use several platforms, libraries
+                and frameworks. I invite you to check my portfolios, where I
+                have put a lot of effort to implement several projects.
               </p>
               <p>
                 In addition I am a maniac rock climber having more than 2000
