@@ -55,7 +55,7 @@ const About = () => {
               </p>
               <p>
                 In addition I am a maniac rock climber having more than 2000
-                assents and over 36 Km distance climbed. Mostly I prefer sport
+                ascents and over 36 Km distance climbed. Mostly I prefer sport
                 climbing but I do not miss the opportunity to go trad also!
               </p>
             </div>
