@@ -8,7 +8,7 @@ const StravaCardElapsedTime = () => {
   return (
     <div>
       <Card style={{ padding: '5px' }} className='shadow-border'>
-        <CardTitle>Total Time</CardTitle>
+        <CardTitle>Strava Total Time</CardTitle>
         <CardText style={{ fontSize: '30px' }}>{time}</CardText>
       </Card>
     </div>

@@ -8,7 +8,7 @@ const StravaCardRuns = () => {
   return (
     <div>
       <Card style={{ padding: '5px' }} className='shadow-border'>
-        <CardTitle>Total Runs</CardTitle>
+        <CardTitle>Strava Total Runs</CardTitle>
         <CardText style={{ fontSize: '30px' }}>{count}</CardText>
       </Card>
     </div>
