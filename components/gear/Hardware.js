@@ -3,7 +3,7 @@ import { Card, CardTitle, CardText } from 'reactstrap';
 
 import Title from 'components/elements/title';
 
-const Software = () => {
+const Hardware = () => {
   return (
     <div>
       <Card style={{ padding: '5px' }} className='shadow-border'>
@@ -30,4 +30,4 @@ const Software = () => {
   );
 };
 
-export default Software;
+export default Hardware;
