@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, CardTitle, CardText } from 'reactstrap';
 
-import Title from 'components/elements/title';
+import Title from 'components/elements/Title';
 
 const Software = () => {
   return (
