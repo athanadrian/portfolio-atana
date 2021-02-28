@@ -2,8 +2,8 @@ import React from 'react';
 import { Card, CardTitle, CardText } from 'reactstrap';
 
 const CragCardAccents = () => {
-  const total = 2023;
-  const successful = 1674;
+  const total = 2042;
+  const successful = 1688;
   return (
     <div>
       <Card style={{ padding: '5px' }} className='shadow-border'>
