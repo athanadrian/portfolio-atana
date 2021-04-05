@@ -8,7 +8,9 @@ const CragCardAccents = () => {
   return (
     <div>
       <Card style={{ padding: '5px' }} className='shadow-border'>
-        <CardTitle>Crag Assents {percentage} %</CardTitle>
+        <CardTitle>
+          Crag Assents <strong>{Math.ceil(percentage)} %</strong>
+        </CardTitle>
         <CardText style={{ fontSize: '30px' }}>
           {total} -{' '}
           <span style={{ fontSize: '30px', color: 'teal' }}>{successful}</span>{' '}
