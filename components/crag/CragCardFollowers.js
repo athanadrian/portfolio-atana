@@ -6,7 +6,7 @@ const CragCardFollowers = () => {
     <div>
       <Card>
         <div className='d-flex'>
-          <div>
+          <div className='d-flex' style={{ justifyContent: 'space-around' }}>
             <CardTitle>Crag Followers</CardTitle>
             <CardText style={{ fontSize: '30px' }}>5</CardText>
           </div>
