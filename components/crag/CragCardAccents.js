@@ -2,8 +2,8 @@ import React from 'react';
 import { Card, CardTitle, CardText } from 'reactstrap';
 
 const CragCardAccents = () => {
-  const total = 2137;
-  const successful = 1771;
+  const total = 2168;
+  const successful = 1796;
   const percentage = (successful * 100) / total;
   return (
     <div>
