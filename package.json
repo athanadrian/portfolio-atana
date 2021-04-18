@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "heroku-postbuild": "next build",
     "dev": "NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
     "start-dev": "cross-env NODE_ENV=production node server.js",
