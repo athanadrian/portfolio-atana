@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "heroku-postbuild": "next build",
     "dev": "NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
     "start-dev": "cross-env NODE_ENV=production node server.js",
@@ -28,7 +27,8 @@
     "reactstrap": "^8.4.1",
     "sass": "^1.26.5",
     "slate-simple-editor": "git+https://github.com/Jerga99/slate-simple-editor.git",
-    "swr": "^0.2.0"
+    "swr": "^0.2.0",
+    "tslib": "^1.9.0"
   },
   "devDependencies": {
     "@babel/register": "^7.12.13"
