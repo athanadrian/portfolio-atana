@@ -27,6 +27,9 @@ const Software = () => {
           <Title label='Terminal:' /> Mac Terminal
         </CardText>
         <CardText>
+          <Title label='Cloud DB:' /> Mongo Atlas
+        </CardText>
+        <CardText>
           <Title label='Local DB:' /> MongoDB, Robo 3T, MongoDB Compass
         </CardText>
       </Card>
