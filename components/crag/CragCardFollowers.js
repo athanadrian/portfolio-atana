@@ -8,11 +8,11 @@ const CragCardFollowers = () => {
         <div className='d-flex' style={{ padding: '5px' }}>
           <div>
             <CardTitle>Crag Followers</CardTitle>
-            <CardText style={{ fontSize: '30px' }}>5</CardText>
+            <CardText style={{ fontSize: '30px' }}>12</CardText>
           </div>
           <div className='ml-auto'>
             <CardTitle>Crag Following</CardTitle>
-            <CardText style={{ fontSize: '30px' }}>8</CardText>
+            <CardText style={{ fontSize: '30px' }}>17</CardText>
           </div>
         </div>
       </Card>
