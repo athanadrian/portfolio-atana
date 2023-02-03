@@ -27,6 +27,16 @@ const Cv = () => {
       <BasePage>
         <h1 className='pb-2'>Social</h1>
         <Row className='mb-3'>
+          <Col md='10'>
+          <Card>
+        <div style={{ padding: '5px' }}>
+            <CardTitle>Email</CardTitle>
+            <CardText style={{ fontSize: '30px' }}>athanadrian@gmail.com</CardText>
+        </div>
+      </Card>
+          </Col>
+        </Row>
+        <Row className='mb-3'>
           <Col md>
             <GithubCardProjects />
           </Col>

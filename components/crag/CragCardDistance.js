@@ -6,7 +6,7 @@ const CragCardDistance = () => {
     <div>
       <Card style={{ padding: '5px' }} className='shadow-border'>
         <CardTitle>Crag Distance Climbed</CardTitle>
-        <CardText style={{ fontSize: '30px' }}>51,2 Km</CardText>
+        <CardText style={{ fontSize: '30px' }}>53,1 Km</CardText>
       </Card>
     </div>
   );
