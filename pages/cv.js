@@ -2,7 +2,7 @@ import React from 'react';
 import BasePage from '@/components/BasePage';
 import BaseLayout from '@/components/layouts/BaseLayout';
 import { useGetUser } from '@/actions/user';
-import { Col, Row } from 'reactstrap';
+import { Col, Row,Card, CardTitle, CardText } from 'reactstrap';
 import GitHubCardFollowers from 'components/github/GithubCardFollowers';
 import GitHubCardForks from 'components/github/GithubCardForks';
 import GithubCardProjects from 'components/github/GithubCardProjects';
